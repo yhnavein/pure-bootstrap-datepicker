@@ -1,0 +1,214 @@
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+.datepicker {
+	&-inline {
+		width: 220px;
+	}
+	direction: ltr;
+	&&-rtl {
+		direction: rtl;
+		table tr td span {
+			float: right;
+		}
+	}
+	&-dropdown {
+		top: 0;
+		left: 0;
+		.border-radius(0);
+		padding: 5px 0 0;
+		&:before {
+			content: '';
+			display: inline-block;
+			border-left:   7px solid transparent;
+			border-right:  7px solid transparent;
+			border-bottom: 7px solid #ccc;
+			border-bottom-color: rgba(0,0,0,.2);
+			position: absolute;
+			top: -7px;
+			left: 6px;
+		}
+		&:after {
+			content: '';
+			display: inline-block;
+			border-left:   6px solid transparent;
+			border-right:  6px solid transparent;
+			border-bottom: 6px solid @white;
+			position: absolute;
+			top: -6px;
+			left: 7px;
+		}
+	}
+	>div {
+		display: none;
+	}
+	&.days div.datepicker-days {
+		display: block;
+	}
+	&.months div.datepicker-months {
+		display: block;
+	}
+	&.years div.datepicker-years {
+		display: block;
+	}
+	table{
+		margin: 0;
+		border-collapse: separate; /* for border radius in tables */
+		border-spacing: 0;
+	}
+	td,
+	th{
+		text-align: center;
+		width: 20px;
+		border: none;
+
+		&:first-child {
+			border-left: 1px solid #ccc;
+		}
+		&:last-child {
+			border-right: 1px solid #ccc;
+		}
+	}
+	tbody td {
+		border-left: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		.buttonBackground(#ededed, #dedede);
+		color: #6c6c6c;
+	}
+	tbody tr:last-child td {
+		border-bottom: 1px solid #ccc;
+	}
+	thead .controls {
+		th {
+			border-top: 1px solid #a6a6a6;
+			.buttonBackground(#d0d1d1, #b5b5b5);
+			color: #4d4d4d;
+		}
+	}
+	th {
+		border-top: 1px solid rgba(255,255,255,0.25);
+		border-bottom: 1px solid #aaa;
+	}
+	tr.week-days th {
+		font-weight: normal;
+		font-size: 10px;
+		text-transform: uppercase;
+		#gradient > .vertical(#fafbfb, #e8e9e9);
+		.reset-filter();
+		line-height: 12px;
+	}
+	// Inline display inside a table presents some problems with
+	// border and background colors.
+	.table-striped & table tr {
+		td, th {
+			background-color:transparent;
+		}
+	}
+	table tr td {
+		height: 20px;
+
+		&.day:hover {
+			cursor: pointer;
+			#gradient > .vertical(#dedede, spin(#dedede, 15));
+		}
+		&.old,
+		&.new {
+			color: @grayLight;
+			.buttonBackground(#f4f4f4, #ececec);
+		}
+		&.disabled,
+		&.disabled:hover {
+			background: #ededed;
+			color: @grayLight;
+			cursor: default;
+		}
+		&.today,
+		&.today:hover,
+		&.today.disabled,
+		&.today.disabled:hover {
+			@todayBackground: lighten(@orange, 30%);
+			.buttonBackground(@todayBackground, spin(@todayBackground, 10));
+			.box-shadow(inset 0 1px 5px rgba(0, 0, 0, .25));
+			color: #000 !important;
+		}
+		&.active,
+		&.active:hover,
+		&.active.disabled,
+		&.active.disabled:hover {
+			.buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 10));
+			.box-shadow(inset 0 1px 5px rgba(0, 0, 0, .25));
+			color: #e0e0e0;
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+		}
+		span {
+			display: block;
+			width: 23%;
+			height: 54px;
+			line-height: 54px;
+			float: left;
+			margin: 1%;
+			cursor: pointer;
+			&:hover {
+				background: @grayLighter;
+			}
+			&.disabled,
+			&.disabled:hover {
+				background:none;
+				color: @grayLight;
+				cursor: default;
+			}
+			&.active,
+			&.active:hover,
+			&.active.disabled,
+			&.active.disabled:hover {
+				.buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 20));
+				color: #fff;
+				text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+			}
+			&.old {
+				color: @grayLight;
+			}
+		}
+	}
+
+	th.switch {
+		width: 145px;
+	}
+
+	thead tr:first-child th,
+	tfoot tr:first-child th {
+		cursor: pointer;
+		&:hover{
+			#gradient > .vertical(lighten(#d0d1d1, 10), lighten(#b5b5b5, 10));
+		}
+	}
+	// Basic styling for calendar-week cells
+	.cw {
+		font-size: 10px;
+		width: 12px;
+		padding: 0 2px 0 5px;
+		vertical-align: middle;
+	}
+	thead tr:first-child th.cw {
+		cursor: default;
+		background-color: transparent;
+	}
+}
+.input-append,
+.input-prepend {
+	&.date {
+		.add-on i {
+			display: block;
+			cursor: pointer;
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
