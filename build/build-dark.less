@@ -30,6 +30,13 @@
           box-shadow: @shadow;
 }
 
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
 // Button backgrounds
 .buttonBackground(@startColor, @endColor) {
   .gradientBar(@startColor, @endColor);
