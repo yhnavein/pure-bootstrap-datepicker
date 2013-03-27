@@ -2,7 +2,7 @@
  * Datepicker for Bootstrap
  *
  * Copyright 2012 Stefan Petre
- * Improvements by Andrew Rowls
+ * Improvements by Andrew Rowls and Piotr Dąbrowski
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -81,7 +81,9 @@
 	tbody td {
 		border-left: 1px solid #ddd;
 		border-bottom: 1px solid #ddd;
-		.buttonBackground(#ededed, #dedede);
+		#gradient > .vertical(#ededed, #dedede);
+		border-color: #dedede #dedede darken(#dedede, 15%);
+  	border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
 		color: #6c6c6c;
 		font-family: 'Droid Sans', 'Segoe UI', 'Candara', 'Consolas', sans-serif;
 		font-weight: bold;
@@ -132,32 +134,32 @@
 		}
 		&.old,
 		&.new {
-			color: @grayLight;
-			.buttonBackground(#f4f4f4, #ececec);
+			color: #999;
+			#gradient > .vertical(#f4f4f4, #ececec);
 		}
 		&.disabled,
 		&.disabled:hover {
 			background: #ededed;
-			color: @grayLight;
+			color: #999;
 			cursor: default;
+		}
+		&.today, &.active {
+			.box-shadow(inset 0 1px 5px rgba(0, 0, 0, .25));
+			color: #e0e0e0;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 		}
 		&.today,
 		&.today:hover,
 		&.today.disabled,
 		&.today.disabled:hover {
-			@todayBackground: lighten(@orange, 30%);
-			.buttonBackground(@todayBackground, spin(@todayBackground, 10));
-			.box-shadow(inset 0 1px 5px rgba(0, 0, 0, .25));
-			color: #000 !important;
+			@todayBackground: lighten(@orange, 20%);
+			#gradient > .vertical(@todayBackground, spin(@todayBackground, 10));
 		}
 		&.active,
 		&.active:hover,
 		&.active.disabled,
 		&.active.disabled:hover {
-			.buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 10));
-			.box-shadow(inset 0 1px 5px rgba(0, 0, 0, .25));
-			color: #e0e0e0;
-			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+			#gradient > .vertical(@btnPrimaryBackground, spin(@btnPrimaryBackground, 10));
 		}
 		span {
 			display: block;
@@ -180,7 +182,7 @@
 			&.active:hover,
 			&.active.disabled,
 			&.active.disabled:hover {
-				.buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 10));
+				#gradient > .vertical(@btnPrimaryBackground, spin(@btnPrimaryBackground, 10));
 				.box-shadow(inset 0 0 20px rgba(0, 0, 0, 0.25));
 				color: #fff;
 				text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
