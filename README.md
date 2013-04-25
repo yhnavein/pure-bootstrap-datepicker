@@ -134,6 +134,23 @@ A standalone .css file (including necessary dropdown styles and alternative, tex
 $ lessc build/build_standalone.less datepicker.css
 ```
 
+## Data API
+
+As with bootstrap's own plugins, datepicker provides a data-api that can be used to instantiate datepickers without the need for custom javascript.  For most datepickers, simply set `data-provide="datepicker"` on the element you want to initialize, and it will be intialized lazily, in true bootstrap fashion.  For inline datepickers, this can alternatively be `data-provide="datepicker-inline"`; these will be immediately initialized on page load, and cannot be lazily loaded.
+
+You can disable datepicker's data-api in the same way as you would disable other bootstrap plugins:
+
+```javascript
+$(document).off('.datepicker.data-api');
+```
+
+## No Conflict
+
+```javascript
+var datepicker = $.fn.datepicker.noConflict(); // return $.fn.datepicker to previously assigned value
+$.fn.bootstrapDP = datepicker;                 // give $().bootstrapDP the bootstrap-datepicker functionality
+```
+
 ## Options
 
 All options that take a "Date" can handle a `Date` object; a String formatted according to the given `format`; or a timedelta relative to today, eg '-1d', '+6m +1y', etc, where valid units are 'd' (day), 'w' (week), 'm' (month), and 'y' (year).
@@ -229,6 +246,26 @@ Boolean.  Default: true
 
 Whether or not to force parsing of the input value when the picker is closed.  That is, when an invalid date is left in the input field by the user, the picker will forcibly parse that value, and set the input's value to the new, valid date, conforming to the given `format`.
 
+### inputs
+
+Array.  Default: None
+
+A list of inputs to be used in a range picker, which will be attached to the selected element.  Allows for explicitly creating a range picker on a non-standard element.
+
+### beforeShowDay
+
+Function(Date).  Default: $.noop
+
+A function that takes a date as a parameter and returns one of the following values:
+
+ * undefined to have no effect
+ * A Boolean, indicating whether or not this date is selectable
+ * A String representing additional CSS classes to apply to the date's cell
+ * An object with the following properties:
+   * `enabled`: same as the Boolean value above
+   * `classes`: same as the String value above
+   * `tooltip`: a tooltip to apply to this date, via the `title` HTML attribute
+
 ## Markup
 
 Format a component.
@@ -236,6 +273,16 @@ Format a component.
 ```html
 <div class="input-append date datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
     <input class="span2" size="16" type="text" value="12-02-2012"><span class="add-on"><i class="icon-th"></i></span>
+</div>
+```
+
+Create a date-range picker:
+
+```html
+<div class="input-daterange" id="datepicker">
+    <input class="input-small" name="start" value="2012-04-05" />
+    <span class="add-on">to</span>
+    <input class="input-small" name="end" value="2012-04-07" />
 </div>
 ```
 
