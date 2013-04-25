@@ -13,8 +13,8 @@ build:
 	@echo "\n${HR}"
 	@echo "Building Bootstrap DatePicker..."
 	@echo "${HR}\n"
-	@./node_modules/.bin/recess --compile ${DATEPICKER_LESS} > ${DATEPICKER_CSS}
-	@echo "Compiling LESS with Recess...               ${CHECK} Done"
+	@./node_modules/.bin/lessc ${DATEPICKER_LESS} > ${DATEPICKER_CSS}
+	@echo "Compiling LESS with LESS...               ${CHECK} Done"
 	@echo "\n${HR}"
 	@echo "Bootstrap DatePicker successfully built at ${DATE}."
 	@echo "${HR}\n"

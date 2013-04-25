@@ -3,6 +3,6 @@
   , "homepage": "http://blog.puredev.eu"
   , "author": "PureDev"
   , "devDependencies": {
-      "recess": "1.1.6"
+      "less": "*"
   }
 }

@@ -10,8 +10,9 @@
 
 
 .datepicker {
-	padding: 4px;
+	padding: 0;
 	.border-radius(4px);
+	border: 0 none;
 	&-inline {
 		width: 220px;
 	}
@@ -202,6 +203,14 @@
 		cursor: pointer;
 		&:hover{
 			#gradient > .vertical(lighten(#d0d1d1, 10), lighten(#b5b5b5, 10));
+		}
+		&.arrow-disabled {
+			i { visibility: hidden; }
+
+			&:hover {
+				#gradient > .vertical(#d0d1d1, #b5b5b5);
+				cursor: default;
+			}
 		}
 	}
 	// Basic styling for calendar-week cells

@@ -500,6 +500,16 @@
 			yearCont.html(html);
 		},
 
+		showArrow: function(th) {
+			if(th.hasClass('arrow-disabled'))
+				th.removeClass('arrow-disabled');
+		},
+
+		hideArrow: function(th) {
+			if(!th.hasClass('arrow-disabled'))
+				th.addClass('arrow-disabled');
+		},
+
 		updateNavArrows: function() {
 			if (!this._allow_update) return;
 
@@ -509,27 +519,27 @@
 			switch (this.viewMode) {
 				case 0:
 					if (this.startDate !== -Infinity && year <= this.startDate.getUTCFullYear() && month <= this.startDate.getUTCMonth()) {
-						this.picker.find('.prev').css({visibility: 'hidden'});
+						this.hideArrow(this.picker.find('.prev'));
 					} else {
-						this.picker.find('.prev').css({visibility: 'visible'});
+						this.showArrow(this.picker.find('.prev'));
 					}
 					if (this.endDate !== Infinity && year >= this.endDate.getUTCFullYear() && month >= this.endDate.getUTCMonth()) {
-						this.picker.find('.next').css({visibility: 'hidden'});
+						this.hideArrow(this.picker.find('.next'));
 					} else {
-						this.picker.find('.next').css({visibility: 'visible'});
+						this.showArrow(this.picker.find('.next'));
 					}
 					break;
 				case 1:
 				case 2:
 					if (this.startDate !== -Infinity && year <= this.startDate.getUTCFullYear()) {
-						this.picker.find('.prev').css({visibility: 'hidden'});
+						this.hideArrow(this.picker.find('.prev'));
 					} else {
-						this.picker.find('.prev').css({visibility: 'visible'});
+						this.showArrow(this.picker.find('.prev'));
 					}
 					if (this.endDate !== Infinity && year >= this.endDate.getUTCFullYear()) {
-						this.picker.find('.next').css({visibility: 'hidden'});
+						this.hideArrow(this.picker.find('.next'));
 					} else {
-						this.picker.find('.next').css({visibility: 'visible'});
+						this.showArrow(this.picker.find('.next'));
 					}
 					break;
 			}
