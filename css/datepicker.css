@@ -46,7 +46,7 @@
   border-right: 6px solid transparent;
   border-bottom: 6px solid #c5c6c6;
   position: absolute;
-  top: -4px;
+  top: -6px;
   left: 7px;
 }
 .datepicker > div {
@@ -311,16 +311,6 @@
 .datepicker table tr td.range.today.disabled:hover[disabled] {
   background-color: #f3e97a;
 }
-.datepicker table tr td.range.today:active,
-.datepicker table tr td.range.today:hover:active,
-.datepicker table tr td.range.today.disabled:active,
-.datepicker table tr td.range.today.disabled:hover:active,
-.datepicker table tr td.range.today.active,
-.datepicker table tr td.range.today:hover.active,
-.datepicker table tr td.range.today.disabled.active,
-.datepicker table tr td.range.today.disabled:hover.active {
-  background-color: #efe24b \9;
-}
 .datepicker table tr td.selected,
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected.disabled,
@@ -361,16 +351,6 @@
 .datepicker table tr td.selected.disabled[disabled],
 .datepicker table tr td.selected.disabled:hover[disabled] {
   background-color: #808080;
-}
-.datepicker table tr td.selected:active,
-.datepicker table tr td.selected:hover:active,
-.datepicker table tr td.selected.disabled:active,
-.datepicker table tr td.selected.disabled:hover:active,
-.datepicker table tr td.selected.active,
-.datepicker table tr td.selected:hover.active,
-.datepicker table tr td.selected.disabled.active,
-.datepicker table tr td.selected.disabled:hover.active {
-  background-color: #666666 \9;
 }
 .datepicker table tr td.active,
 .datepicker table tr td.active:hover,
