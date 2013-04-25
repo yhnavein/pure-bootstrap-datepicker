@@ -115,7 +115,7 @@
 .datepicker tbody tr:last-child td:last-child {
   border-bottom-right-radius: 4px;
 }
-.datepicker thead .controls th {
+.datepicker thead .datepicker-controls th {
   border-top: 1px solid #a6a6a6;
   background-color: #c5c6c6;
   background-image: -moz-linear-gradient(top, #d0d1d1, #b5b5b5);
@@ -131,24 +131,24 @@
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   color: #4d4d4d;
 }
-.datepicker thead .controls th:hover,
-.datepicker thead .controls th:active,
-.datepicker thead .controls th.active,
-.datepicker thead .controls th.disabled,
-.datepicker thead .controls th[disabled] {
+.datepicker thead .datepicker-controls th:hover,
+.datepicker thead .datepicker-controls th:active,
+.datepicker thead .datepicker-controls th.active,
+.datepicker thead .datepicker-controls th.disabled,
+.datepicker thead .datepicker-controls th[disabled] {
   background-color: #b5b5b5;
 }
-.datepicker thead .controls th:first-child {
+.datepicker thead .datepicker-controls th:first-child {
   border-top-left-radius: 4px;
 }
-.datepicker thead .controls th:last-child {
+.datepicker thead .datepicker-controls th:last-child {
   border-top-right-radius: 4px;
 }
 .datepicker th {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   border-bottom: 1px solid #aaa;
 }
-.datepicker tr.week-days th {
+.datepicker tr.datepicker-week-days th {
   font-weight: normal;
   font-size: 10px;
   text-transform: uppercase;

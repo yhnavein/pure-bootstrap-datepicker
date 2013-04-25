@@ -371,7 +371,7 @@
 
 		fillDow: function(){
 			var dowCnt = this.weekStart,
-			html = '<tr class="week-days">';
+			html = '<tr class="datepicker-week-days">';
 			if(this.calendarWeeks){
 				var cell = '<th class="cw">&nbsp;</th>';
 				html += cell;
@@ -998,7 +998,7 @@
 			return date.join('');
 		},
 		headTemplate: '<thead>'+
-							'<tr class="controls">'+
+							'<tr class="datepicker-controls">'+
 								'<th class="prev"><i class="icon-arrow-left"/></th>'+
 								'<th colspan="5" class="switch"></th>'+
 								'<th class="next"><i class="icon-arrow-right"/></th>'+
