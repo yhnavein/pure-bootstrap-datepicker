@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Pure Datepicker for Bootstrap</title>
-    <link href="components/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../css/datepicker-dark.css" rel="stylesheet">
+    <title>Pure Bootstrap Datepicker</title>
+    <link href="components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/datepicker.css" rel="stylesheet">
     <style>
       #alert {
         display: none;
@@ -13,7 +13,7 @@
         padding-top: 50px;
       }
     </style>
-    <link href="components/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="components/google-code-prettify/src/prettify.css" rel="stylesheet">
     <link href="docs.css" rel="stylesheet">
     <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
     <!--[if IE 7]>
@@ -33,10 +33,10 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="https://github.com/eternicode/bootstrap-datepicker">Pure Datepicker for Bootstrap</a>
+          <a class="brand" href="https://github.com/yhnavein/pure-bootstrap-datepicker">Pure Bootstrap Datepicker</a>
           <ul class="nav">
             <li class="active"><a href="#">Docs and examples</a></li>
-            <li><a href="https://github.com/eternicode/bootstrap-datepicker" taget="_blank">Watch on GitHub</a></li>
+            <li><a href="index-dark.html">Dark theme</a></li>            <li><a href="https://github.com/yhnavein/pure-bootstrap-datepicker" taget="_blank">Watch on GitHub</a></li>
           </ul>
         </div>
       </div>
@@ -45,7 +45,7 @@
     <div class="container">
       <section id="typeahead">
         <div class="page-header">
-          <h1>Pure Datepicker for Bootstrap <small>bootstrap-datepicker.js</small></h1>
+          <h1>Pure Bootstrap Datepicker <small>bootstrap-datepicker.js</small></h1>
         </div>
 
         <div class="row">
@@ -57,8 +57,8 @@
               <li>formats: dd, d, mm, m, yyyy, yy</li>
               <li>separators: -, /, .</li>
             </ul>
-            <p><a id="download-release" href="https://github.com/eternicode/../zipball/v1.0.1" class="btn">Download v1.0.1</a></p>
-            <p><a id="download-master" href="https://github.com/eternicode/../zipball/master" class="btn">Download Development</a></p>
+            <p><a id="download-release" href="https://github.com/yhnavein/../zipball/v1.0.1" class="btn">Download v1.0.1</a></p>
+            <p><a id="download-master" href="https://github.com/yhnavein/../zipball/master" class="btn">Download Development</a></p>
             <script>
             // Track downloads
             $(function(){
@@ -94,9 +94,7 @@
 &lt;input type="text" id="dp1"&gt;
 </pre>
                 <pre class="well prettyprint linenums" id="dp1-js">
-$('#dp1').datepicker({
-  format: 'mm-dd-yyyy'
-});
+$('#dp1').datepicker();
 </pre>
               </div>
             </div>
@@ -793,8 +791,7 @@ $('.datepicker').datepicker({
       <p>Andrew Rowls 2012-2013</p>
 
     </div>
-
-    <script src="components/bootstrap/js/bootstrap.js"></script>
+    <script src="components/bootstrap/docs/assets/js/bootstrap.min.js"></script>
     <script>
       $(function(){
         window.prettyPrint && prettyPrint();
@@ -828,7 +825,7 @@ $('.datepicker').datepicker({
 
     </script>
 
-    <script src="components/google-code-prettify/prettify.min.js"></script>
+    <script src="components/google-code-prettify/src/prettify.js"></script>
 
     <script src="../js/bootstrap-datepicker.js"></script>
     <script src="../js/locales/bootstrap-datepicker.bg.js" charset="UTF-8"></script>

@@ -8,6 +8,7 @@
   "dependencies": {
     "jquery": ">=1.7.1",
     "bootstrap": ">=2.0.4 <3.0",
-    "font-awesome" : ">=3.0"
+    "font-awesome" : ">=3.0",
+    "google-code-prettify" : "*"
   }
 }

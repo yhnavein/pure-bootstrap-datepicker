@@ -18,7 +18,9 @@ build:
 
 	@./node_modules/.bin/lessc ${DATEPICKER_LESS} > ${DATEPICKER_CSS}
 	@./node_modules/.bin/lessc ${DATEPICKER_DARK_LESS} > ${DATEPICKER_DARK_CSS}
-	@echo "Compiling LESS files...               ${CHECK} Done"
+	@echo "Compiling LESS files...                        ${CHECK} Done"
+
+	@node docs/build
 
 	@echo "\n${HR}"
 	@echo "Bootstrap DatePicker successfully built at ${DATE}."
@@ -32,5 +34,8 @@ watch:
 	echo "Watching less files..."; \
 	watchr -e "watch('less/.*\.less') { system 'make' }"
 
+bower:
+	bower install
+	mv components/ docs/
 
-.PHONY: docs watch build
+.PHONY: docs watch build bower
